@@ -19,6 +19,15 @@ public class EmployeesRepostory {
         return employee;
     }
 
+    public void createEmployee(String id, String name, int age, String gender) {
+        Employee employee = new Employee();
+        employee.setId(id);
+        employee.setName(name);
+        employee.setAge(age);
+        employee.setGender(gender);
+        employees.put(id, employee);
+    }
+
     public Employee findById(String employeeId){
         return employees.get(employeeId);
     }
@@ -34,6 +43,13 @@ public class EmployeesRepostory {
 
     public Employee deleteEmployee(String employeeId){
         return employees.remove(employeeId);
+    }
+
+    public EmployeesRepostory() {
+        createEmployee("111", "小明", 18, "female");
+        createEmployee("222", "小明2", 12, "female");
+        createEmployee("333", "小明3", 13, "female");
+        createEmployee("444", "小明4", 14, "female");
     }
 
 
