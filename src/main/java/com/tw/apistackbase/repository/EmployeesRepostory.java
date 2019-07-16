@@ -53,6 +53,6 @@ public class EmployeesRepostory {
 
 
     public List<Employee> findSuitableEmployeesByAge(int age) {
-        return new ArrayList<>(employees.values().stream().filter(employee -> employee.getAge() > age).collect(Collectors.toList()));
+        return employees.values().stream().filter(employee -> employee.getAge() > age).collect(Collectors.toList());
     }
 }

@@ -36,8 +36,9 @@ public class EmployeesController {
         return employeesRepostory.updateEmployee(employee);
     }
 
-    @GetMapping("/employees/employee/{age}")
-    public List<Employee> findSuitableEmployeesByAge(@PathVariable int age) {
-        return employeesRepostory.findSuitableEmployeesByAge(age);
+    @GetMapping(value = "/employees", params = "ageMini")
+    public List<Employee> findAgeAbove(@RequestParam int ageMini) {
+        System.out.println(ageMini);
+        return employeesRepostory.findSuitableEmployeesByAge(ageMini);
     }
 }
