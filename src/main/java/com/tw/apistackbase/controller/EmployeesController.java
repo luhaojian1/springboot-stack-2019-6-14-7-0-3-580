@@ -12,7 +12,7 @@ public class EmployeesController {
 
     @PostMapping("/employees")
     public Employee createEmployee(@RequestBody Employee employee) {
-        return employeesRepostory.createEmployee(employee.getName(), employee.getAge(), employee.getGender());
+        return employeesRepostory.createEmployee(employee);
     }
 
     @GetMapping("/employees/{employeeId}")
@@ -34,5 +34,10 @@ public class EmployeesController {
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee employee) {
         return employeesRepostory.updateEmployee(employee);
+    }
+
+    @GetMapping("/employees/employee/{age}")
+    public List<Employee> findSuitableEmployeesByAge(@PathVariable int age) {
+        return employeesRepostory.findSuitableEmployeesByAge(age);
     }
 }
