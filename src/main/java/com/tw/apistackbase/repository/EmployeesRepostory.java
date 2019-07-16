@@ -38,7 +38,7 @@ public class EmployeesRepostory {
 
     public Employee updateEmployee(Employee employee){
         employees.put(employee.getId(),employee);
-        return employee;
+        return employees.get(employee.getId());
     }
 
     public Employee deleteEmployee(String employeeId){

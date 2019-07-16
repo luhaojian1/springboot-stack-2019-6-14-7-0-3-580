@@ -30,4 +30,9 @@ public class EmployeesController {
     public Employee deleteById(@PathVariable String employeeId) {
         return employeesRepostory.deleteEmployee(employeeId);
     }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+        return employeesRepostory.updateEmployee(employee);
+    }
 }
