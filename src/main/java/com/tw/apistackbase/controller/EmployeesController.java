@@ -4,6 +4,8 @@ import com.tw.apistackbase.modle.Employee;
 import com.tw.apistackbase.repository.EmployeesRepostory;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeesController {
     public EmployeesRepostory employeesRepostory = new EmployeesRepostory();
@@ -17,5 +19,10 @@ public class EmployeesController {
     public Employee findById(@PathVariable String employeeId) {
         System.out.println(employeeId);
         return employeesRepostory.findById(employeeId);
+    }
+
+    @GetMapping("/employees")
+    public List<Employee> findAll() {
+        return employeesRepostory.findAll();
     }
 }
